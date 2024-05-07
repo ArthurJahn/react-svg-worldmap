@@ -25,12 +25,12 @@ export const defaultCountryStyle =
           (countryValue as number | undefined);
     let opacityLevel =
       calculatedValue !== undefined
-        ? 0.2 + 0.6 * ((calculatedValue - minValue) / (maxValue - minValue))
+        ? 0.2 + 0.8 * ((calculatedValue - minValue) / (maxValue - minValue))
         : 0;
 
     // If there's only one value, the calculation would be dividing by zero.
     // We adjust it to the maximum value.
-    if (Number.isNaN(opacityLevel)) opacityLevel = 0.8;
+    if (Number.isNaN(opacityLevel)) opacityLevel = 1;
 
     const style = {
       fill: color,

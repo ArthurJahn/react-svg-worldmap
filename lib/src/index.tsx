@@ -40,6 +40,7 @@ export default function WorldMap<T extends number | string>(
     valuePrefix = "",
     valueSuffix = "",
     color = defaultColor,
+    hoverColor = defaultColor,
     strokeOpacity = 0.2,
     backgroundColor = "white",
     tooltipBgColor = "black",
@@ -114,6 +115,7 @@ export default function WorldMap<T extends number | string>(
         style={styleFunction(context)}
         onClick={onClick(context)}
         strokeOpacity={strokeOpacity}
+        hoverColor={hoverColor}
         href={hrefFunction?.(context)}
         key={countryName}
       />
