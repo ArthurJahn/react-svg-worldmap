@@ -23,7 +23,7 @@ export interface Props<T extends string | number = number> {
     valuePrefix?: string;
     valueSuffix?: string;
     color?: string;
-    hoverColor?: string;
+    hovercolor?: string;
     strokeOpacity?: number;
     backgroundColor?: string;
     tooltipBgColor?: string;

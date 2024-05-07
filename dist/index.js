@@ -16,7 +16,7 @@ function toValue({ value }) {
     return typeof value === "string" ? 0 : value;
 }
 function WorldMap(props) {
-    const { data, title, valuePrefix = "", valueSuffix = "", color = constants_js_1.defaultColor, hoverColor = constants_js_1.defaultColor, strokeOpacity = 0.2, backgroundColor = "white", tooltipBgColor = "black", tooltipTextColor = "white", rtl = false, size = constants_js_1.defaultSize, frame = false, frameColor = "black", borderColor = "black", richInteraction = false, styleFunction = (0, constants_js_1.defaultCountryStyle)(borderColor, strokeOpacity), tooltipTextFunction = constants_js_1.defaultTooltip, onClickFunction, hrefFunction, textLabelFunction = () => [], } = props;
+    const { data, title, valuePrefix = "", valueSuffix = "", color = constants_js_1.defaultColor, hovercolor = constants_js_1.defaultColor, strokeOpacity = 0.2, backgroundColor = "white", tooltipBgColor = "black", tooltipTextColor = "white", rtl = false, size = constants_js_1.defaultSize, frame = false, frameColor = "black", borderColor = "black", richInteraction = false, styleFunction = (0, constants_js_1.defaultCountryStyle)(borderColor, strokeOpacity), tooltipTextFunction = constants_js_1.defaultTooltip, onClickFunction, hrefFunction, textLabelFunction = () => [], } = props;
     const windowWidth = (0, utils_js_1.useWindowWidth)();
     // Inits
     const width = typeof size === "number" ? size : (0, utils_js_1.responsify)(size, windowWidth);
@@ -54,7 +54,7 @@ function WorldMap(props) {
             prefix: valuePrefix,
             suffix: valueSuffix,
         };
-        const path = (React.createElement(Region_js_1.default, { ref: triggerRef, d: pathGenerator(geoFeature), style: styleFunction(context), onClick: onClick(context), strokeOpacity: strokeOpacity, hoverColor: hoverColor, href: hrefFunction?.(context), key: countryName }));
+        const path = (React.createElement(Region_js_1.default, { ref: triggerRef, d: pathGenerator(geoFeature), style: styleFunction(context), onClick: onClick(context), strokeOpacity: strokeOpacity, hovercolor: hovercolor, href: hrefFunction?.(context), key: countryName }));
         const tooltip = (0, draw_js_1.drawTooltip)(typeof context.countryValue === "undefined"
             ? undefined
             : tooltipTextFunction(context), tooltipBgColor, tooltipTextColor, rtl, triggerRef, containerRef);

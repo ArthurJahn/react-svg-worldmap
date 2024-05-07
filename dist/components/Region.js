@@ -2,12 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
-function onMouseOver(strokeOpacity, hoverColor) {
+function onMouseOver(strokeOpacity, hovercolor) {
     return (event) => {
         const path = event.currentTarget;
         const color = path.dataset.color || path.style.fill;
         path.dataset.color = color;
-        path.style.fill = hoverColor;
+        path.style.fill = hovercolor;
         path.style.strokeWidth = "2";
         path.style.strokeOpacity = String(Math.min(strokeOpacity + 0.3, 1));
     };
@@ -21,7 +21,7 @@ function onMouseOut(strokeOpacity) {
     };
 }
 function Region({ href, ...props }, ref) {
-    const path = (React.createElement("path", { onMouseOver: onMouseOver(Number(props.strokeOpacity), props.hoverColor), onMouseOut: onMouseOut(Number(props.strokeOpacity)), ref: ref, ...props }));
+    const path = (React.createElement("path", { onMouseOver: onMouseOver(Number(props.strokeOpacity), props.hovercolor), onMouseOut: onMouseOut(Number(props.strokeOpacity)), ref: ref, ...props }));
     if (href)
         return React.createElement("a", { ...(typeof href === "string" ? { href } : href) }, path);
     return path;
