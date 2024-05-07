@@ -1,37 +1,47 @@
 {
-  "private": true,
-  "workspaces": [
-    "lib",
-    "website"
+  "name": "react-svg-worldmap",
+  "version": "2.0.0-alpha.16",
+  "license": "MIT",
+  "displayName": "React Worldmap",
+  "description": "A pure react component to draw a map of world countries. Simple. Free.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
   ],
+  "engines": {
+    "node": ">=14.16"
+  },
   "scripts": {
-    "build:package": "yarn workspace react-svg-worldmap build",
-    "build:website": "yarn workspace website build",
-    "build": "yarn build:package && yarn build:website",
-    "start:website": "yarn workspace website start",
-    "lint": "eslint --cache \"**/*.{js,jsx,ts,tsx}\"",
-    "format": "prettier --write .",
-    "format-check": "prettier --list-different .",
-    "typecheck": "yarn workspace website typecheck",
-    "spellcheck": "cspell \"**\" --no-progress",
-    "prepare": "husky install"
+    "build": "tsc",
+    "build:local": "yarn build && npm pack"
+  },
+  "dependencies": {
+    "d3-geo": "^2.0.2",
+    "react-path-tooltip": "^1.0.25",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.15",
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
-    "@typescript-eslint/parser": "^5.30.7",
-    "cspell": "^6.4.0",
-    "eslint": "^8.20.0",
-    "eslint-config-jc": "^2.3.2",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.0",
-    "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^3.0.0",
-    "prettier-config-jc": "^2.3.0",
-    "tsconfig-jc": "^2.3.0",
-    "typescript": "^4.7.4"
-  }
+    "@types/d3-geo": "^2.0.2",
+    "@types/geojson": "^7946.0.10"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16.0.0"
+  },
+  "authors": [
+    "yanivam (https://github.com/yanivam)"
+  ],
+  "keywords": [
+    "react",
+    "worldmap",
+    "world map",
+    "map",
+    "component",
+    "typescript",
+    "svg",
+    "countries"
+  ],
+  "bugs": "https://github.com/yanivam/react-svg-worldmap/issues",
+  "repository": "github:yanivam/react-svg-worldmap"
 }
